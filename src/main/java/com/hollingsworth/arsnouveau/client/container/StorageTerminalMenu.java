@@ -65,15 +65,15 @@ public class StorageTerminalMenu extends RecipeBookMenu<CraftingInput, CraftingR
     }
 
     public void addStorageSlots(boolean expanded) {
-        int lines = 7;
+        int lines = 16;
         boolean shouldAdd = storageSlotList.isEmpty();
         for (int i = 0; i < lines; ++i) {
-            for (int j = 0; j < 9; ++j) {
+            for (int j = -3; j < 12; ++j) {
                 int index = i * 9 + j;
                 if (shouldAdd) {
                     storageSlotList.add(new SlotStorage(this.te, index, 13 + j * 18, 21 + i * 18, expanded || i < 3));
                 } else {
-                    storageSlotList.get(index).show = expanded || i < 3;
+                    storageSlotList.get(index).show = expanded || i < 12;
                 }
             }
         }
